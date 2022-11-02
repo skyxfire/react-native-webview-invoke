@@ -2,7 +2,7 @@ import { createMessager } from './messager/index'
 
 export default getWebview => {
     const { bind, define, listener: handler, fn, addEventListener, removeEventListener, isConnect } = createMessager(
-        (data) => getWebview().postMessage(JSON.stringify(data))
+        (data) => getWebview()?.postMessage(JSON.stringify(data))
     )
     return {
         bind, define, fn,
